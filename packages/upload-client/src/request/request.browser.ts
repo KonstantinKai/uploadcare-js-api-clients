@@ -1,4 +1,4 @@
-import { cancelError } from '../tools/errors'
+import { cancelError, UploadClientError } from '../tools/errors'
 import { onCancel } from '../tools/onCancel'
 import { RequestOptions, RequestResponse } from './types'
 
@@ -85,7 +85,17 @@ const request = ({
       if (aborted) return
 
       // only triggers if the request couldn't be made at all
-      reject(new Error('Network error'))
+      reject(new UploadClientError(
+        'Network error',
+        '0',
+        {
+          method: requestMethod,
+          url,
+          data,
+        },
+        undefined,
+        undefined,
+      ));
     }
 
     if (onProgress && typeof onProgress === 'function') {

@@ -1,6 +1,6 @@
 {
   "name": "@uploadcare/upload-client",
-  "version": "4.3.0",
+  "version": "4.3.0-cnt.0",
   "description": "Library for work with Uploadcare Upload API",
   "type": "module",
   "main": "./dist/index.node.js",
@@ -15,7 +15,11 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist/*", "README.md", "LICENSE"],
+  "files": [
+    "dist/*",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=16"
   },
